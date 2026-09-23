@@ -7,14 +7,55 @@
     <title>almü - Comida a Domicilio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        :root {
+            --colorPrincipal: #63262F;
+            --colorHover: #542027;
+            --colorActivo: #471B21;
+            --colorFondo: #F4E8D1;
+        }
         .heroSection {
-            background-color: #f8f9fa;
             padding: 80px 0;
+        }
+        .fondoCrema {
+            background-color: var(--colorFondo);
+        }
+        .logoMarca {
+            height: 40px;
+        }
+        .btn-primary {
+            --bs-btn-bg: var(--colorPrincipal);
+            --bs-btn-border-color: var(--colorPrincipal);
+            --bs-btn-hover-bg: var(--colorHover);
+            --bs-btn-hover-border-color: var(--colorHover);
+            --bs-btn-active-bg: var(--colorActivo);
+            --bs-btn-active-border-color: var(--colorActivo);
+            --bs-btn-disabled-bg: var(--colorPrincipal);
+            --bs-btn-disabled-border-color: var(--colorPrincipal);
+        }
+        .btn-outline-primary {
+            --bs-btn-color: var(--colorPrincipal);
+            --bs-btn-border-color: var(--colorPrincipal);
+            --bs-btn-hover-bg: var(--colorPrincipal);
+            --bs-btn-hover-border-color: var(--colorPrincipal);
+            --bs-btn-active-bg: var(--colorActivo);
+            --bs-btn-active-border-color: var(--colorActivo);
+        }
+        .alert-info {
+            --bs-alert-color: var(--colorPrincipal);
+            --bs-alert-bg: var(--colorFondo);
+            --bs-alert-border-color: #e8d7b5;
         }
         .fotoPlato {
             height: 200px;
+            width: 100%;
+            object-fit: cover;
             background-color: #e9ecef;
-            font-size: 0.9rem;
+        }
+        .fotoCarrusel {
+            height: 400px;
+            width: 100%;
+            object-fit: cover;
+            background-color: #e9ecef;
         }
     </style>
 </head>
@@ -27,7 +68,9 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold fs-3 text-primary" href="#">almü</a>
+            <a class="navbar-brand" href="index.html">
+                <img src="imagenes/ALMU-LOGO-transparente.png" alt="almü" class="logoMarca">
+            </a>
             <button id="botonMenu" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -50,13 +93,45 @@
         </div>
     </nav>
 
-    <header id="seccionInicio" class="heroSection text-center">
+    <header id="seccionInicio" class="heroSection fondoCrema text-center">
         <div class="container">
             <h1 class="display-4 fw-bold mb-3">Sabor increíble, directo a tu puerta</h1>
             <p class="lead text-muted mb-4">Cocina oculta 100% delivery. Cada semana un menú cerrado, pensado con técnicas más saludables, de lunes a viernes.</p>
             <a id="botonVermenu" href="#seccionMenu" class="btn btn-outline-primary btn-lg">Ver el menú</a>
         </div>
     </header>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">Así lucen nuestros platos</h2>
+            <div id="carruselPlatos" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carruselPlatos" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Papas con Pulled Pork"></button>
+                    <button type="button" data-bs-target="#carruselPlatos" data-bs-slide-to="1" aria-label="Lasaña Clásica"></button>
+                    <button type="button" data-bs-target="#carruselPlatos" data-bs-slide-to="2" aria-label="Postre Pavé"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="imagenes/papaspulled.jpg" class="fotoCarrusel" alt="Papas con Pulled Pork">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/lasana-de-carne-y-queso-2977.jpg" class="fotoCarrusel" alt="Lasaña Clásica">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/pave.jpg" class="fotoCarrusel" alt="Postre Pavé">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carruselPlatos" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carruselPlatos" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </div>
+    </section>
 
     <section id="seccionCocina" class="py-5">
         <div class="container">
@@ -78,16 +153,14 @@
         </div>
     </section>
 
-    <section id="seccionMenu" class="py-5 bg-light">
+    <section id="seccionMenu" class="py-5 fondoCrema">
         <div class="container">
             <h2 class="text-center fw-bold mb-5">Especiales de la Semana</h2>
 
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm border-0">
-                        <div class="card-img-top fotoPlato d-flex align-items-center justify-content-center text-center text-muted px-3">
-                            <span>Foto próximamente: Papas con Pulled Pork</span>
-                        </div>
+                        <img src="imagenes/papaspulled.jpg" class="card-img-top fotoPlato" alt="Papas con Pulled Pork">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Papas con Pulled Pork</h5>
                             <p class="card-text text-muted">Base de papas crujientes bañadas con nuestro cerdo desmenuzado en cocción lenta y salsas de la casa.</p>
@@ -98,9 +171,7 @@
 
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm border-0">
-                        <div class="card-img-top fotoPlato d-flex align-items-center justify-content-center text-center text-muted px-3">
-                            <span>Foto próximamente: Lasaña Clásica</span>
-                        </div>
+                        <img src="imagenes/lasana-de-carne-y-queso-2977.jpg" class="card-img-top fotoPlato" alt="Lasaña Clásica">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Lasaña Clásica</h5>
                             <p class="card-text text-muted">Capas de pasta fresca, salsa boloñesa artesanal y abundante queso gratinado. Porción generosa.</p>
@@ -111,9 +182,7 @@
 
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm border-0">
-                        <div class="card-img-top fotoPlato d-flex align-items-center justify-content-center text-center text-muted px-3">
-                            <span>Foto próximamente: Postre Pavé</span>
-                        </div>
+                        <img src="imagenes/pave.jpg" class="card-img-top fotoPlato" alt="Postre Pavé">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Postre Pavé</h5>
                             <p class="card-text text-muted">El cierre perfecto. Delicioso postre frío en capas con galleta y crema suave. Ideal para compartir.</p>
@@ -129,7 +198,7 @@
         <div class="container">
             <h3 class="mb-3">¿Listo para ordenar?</h3>
             <p class="mb-4">Atendemos exclusivamente por delivery, de lunes a viernes.</p>
-            <a id="botonWhatsapp" href="#" class="btn btn-success btn-lg px-5 rounded-pill">Pedir por WhatsApp</a>
+            <a id="botonWhatsapp" href="index.html" class="btn btn-success btn-lg px-5 rounded-pill">Pedir por WhatsApp</a>
             <hr class="mt-5 mb-4 border-secondary">
             <p class="small text-muted mb-0">&copy; 2026 almü. Todos los derechos reservados.</p>
         </div>
