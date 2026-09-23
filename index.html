@@ -1,11 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="almü — cocina oculta con delivery de lunes a viernes. Menú cerrado semanal preparado con técnicas más saludables, sin frituras profundas.">
+    <title>almü - Comida a Domicilio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .heroSection {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+        }
+        .fotoPlato {
+            height: 200px;
+            background-color: #e9ecef;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    
+
+    <div class="alert alert-info text-center rounded-0 mb-0 alert-dismissible fade show" role="alert">
+        <strong>¡Nuevo cada semana!</strong> Descubre el menú cerrado que preparamos para ti, de lunes a viernes.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-primary" href="#">almü</a>
+            <button id="botonMenu" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="menuNavegacion">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#seccionInicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#seccionCocina">Nuestra Cocina</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#seccionMenu">Menú de la Semana</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="botonPedido" class="btn btn-primary ms-lg-3" href="#seccionPedido">Hacer Pedido</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="seccionInicio" class="heroSection text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Sabor increíble, directo a tu puerta</h1>
+            <p class="lead text-muted mb-4">Cocina oculta 100% delivery. Cada semana un menú cerrado, pensado con técnicas más saludables, de lunes a viernes.</p>
+            <a id="botonVermenu" href="#seccionMenu" class="btn btn-outline-primary btn-lg">Ver el menú</a>
+        </div>
+    </header>
+
+    <section id="seccionCocina" class="py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">Nuestra Cocina</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Cocina oculta</h5>
+                    <p class="text-muted">Preparamos cada plato en nuestra cocina exclusiva para delivery, sin distracciones de un local físico.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Más saludable</h5>
+                    <p class="text-muted">Evitamos las frituras profundas y priorizamos técnicas de cocción que cuidan el sabor y el bienestar.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold">Menú cerrado semanal</h5>
+                    <p class="text-muted">Cada semana un menú fijo y cuidado, para que sepas exactamente qué vas a disfrutar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="seccionMenu" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">Especiales de la Semana</h2>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-img-top fotoPlato d-flex align-items-center justify-content-center text-center text-muted px-3">
+                            <span>Foto próximamente: Papas con Pulled Pork</span>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Papas con Pulled Pork</h5>
+                            <p class="card-text text-muted">Base de papas crujientes bañadas con nuestro cerdo desmenuzado en cocción lenta y salsas de la casa.</p>
+                            <button id="botonAnadirpapas" type="button" class="btn btn-primary mt-auto">Añadir al pedido</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-img-top fotoPlato d-flex align-items-center justify-content-center text-center text-muted px-3">
+                            <span>Foto próximamente: Lasaña Clásica</span>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Lasaña Clásica</h5>
+                            <p class="card-text text-muted">Capas de pasta fresca, salsa boloñesa artesanal y abundante queso gratinado. Porción generosa.</p>
+                            <button id="botonAnadirlasana" type="button" class="btn btn-primary mt-auto">Añadir al pedido</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-img-top fotoPlato d-flex align-items-center justify-content-center text-center text-muted px-3">
+                            <span>Foto próximamente: Postre Pavé</span>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Postre Pavé</h5>
+                            <p class="card-text text-muted">El cierre perfecto. Delicioso postre frío en capas con galleta y crema suave. Ideal para compartir.</p>
+                            <button id="botonAnadirpostre" type="button" class="btn btn-primary mt-auto">Añadir al pedido</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="seccionPedido" class="bg-dark text-white text-center py-5 mt-4">
+        <div class="container">
+            <h3 class="mb-3">¿Listo para ordenar?</h3>
+            <p class="mb-4">Atendemos exclusivamente por delivery, de lunes a viernes.</p>
+            <a id="botonWhatsapp" href="#" class="btn btn-success btn-lg px-5 rounded-pill">Pedir por WhatsApp</a>
+            <hr class="mt-5 mb-4 border-secondary">
+            <p class="small text-muted mb-0">&copy; 2026 almü. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
