@@ -1,0 +1,41 @@
+.heroSection {
+    padding: 80px 0;
+}
+.fondoCrema {
+    background-color: #F4E8D1;
+}
+.logoMarca {
+    height: 40px;
+}
+.botonMarca {
+    background-color: #63262F;
+    border-color: #63262F;
+    color: #fff;
+}
+.botonMarca:hover {
+    background-color: #542027;
+    border-color: #542027;
+    color: #fff;
+}
+.botonContorno {
+    color: #63262F;
+    border-color: #63262F;
+}
+.botonContorno:hover {
+    background-color: #63262F;
+    border-color: #63262F;
+    color: #fff;
+}
+
+.fotoPlato {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    background-color: #e9ecef;
+}
+.fotoCarrusel {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    background-color: #e9ecef;
+}
